@@ -38,7 +38,7 @@ public class Producto {
     }
 
     public Producto(String nombre, String codigo, String tipo, int cantidad, double precio, boolean disponibilidad) {
-        this.nombre = nombre;
+        this.codigo=codigo;        this.nombre = nombre;
         this.tipo = tipo;
         this.cantidad = cantidad;
         this.precio = precio;

@@ -85,17 +85,19 @@ public final class Consulta extends JFrame{
         lbltipo = new JLabel("Tipo");
         lblExistencia = new JLabel("Disponibilidad");
         //Arreglar coordenadas
-        lblnumProducto.setBounds(10, 10, ANCHOC, ALTOC);
+        lblnumProducto.setBounds(1240, 10, ANCHOC, ALTOC);
+        
+        lblCodigo.setBounds(10, 10, ANCHOC, ALTOC);
         lblNombre.setBounds(10, 60, ANCHOC, ALTOC);
-        lblCodigo.setBounds(250, 60, ANCHOC, ALTOC);
         lblCantidad.setBounds(10, 60, ANCHOC, ALTOC);
-        lbltipo.setBounds(250, 60, ANCHOC, ALTOC);
+        lbltipo.setBounds(1250, 60, ANCHOC, ALTOC);
         lblExistencia.setBounds(10, 140, ANCHOC, ALTOC);
     }
     
     public final void formulario(){
         numProducto = new JTextField();
         codigo = new JTextField();
+        precio = new JTextField();
         cantidad = new JTextField();
         tipo = new JComboBox();
         nombre = new JTextField();
@@ -118,9 +120,11 @@ public final class Consulta extends JFrame{
         existencia.add(si);
         existencia.add(no);
         
-        numProducto.setBounds(140,10,ANCHOC,ALTOC);
+        codigo.setBounds(140,10,ANCHOC,ALTOC);
         nombre.setBounds(140,60,ANCHOC,ALTOC);
-        codigo.setBounds(140,100,ANCHOC,ALTOC);
+        numProducto.setBounds(1240,100,ANCHOC,ALTOC);
+        precio.setBounds(140,130,ANCHOC,ALTOC);
+        cantidad.setBounds(140,160,ANCHOC,ALTOC);
         si.setBounds(140,140,50,ALTOC);
         no.setBounds(210,140,50,ALTOC);
         
@@ -169,7 +173,7 @@ public final class Consulta extends JFrame{
     public void eventos(){
         insertar.addActionListener((ActionEvent e) -> {
             Filtro fd = new Filtro();
-            Producto f = new Producto(nombre.getText(),codigo.getText(),tipo.getAccessibleContext().toString(),Integer.parseInt(cantidad.getText()),Double.parseDouble(precio.getText()),true);
+            Producto f = new Producto(nombre.getText(),codigo.getText(),"Fruta",Integer.parseInt(cantidad.getText()),Double.parseDouble(precio.getText()),true);
             
             if(no.isSelected()){
                 f.setDisponibilidad(false);

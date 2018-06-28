@@ -50,7 +50,7 @@ public class Conexion {
         user = "root";
         pass = "";
         driver = "com.mysql.jdbc.Driver";
-        url = "jdbc:mysql://127.0.0.1/corto";
+        url = "jdbc:mysql://127.0.0.1/corto 4";
     }
     
     public Connection getCnx(){

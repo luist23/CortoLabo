@@ -23,7 +23,7 @@ public class Filtro {
     private static final String SQL_INSERT = "INSERT INTO productos (codigo,nombre,cantidad,precio,tipo,disponibilidad) VALUES (?,?,?,?,?,?)";
     private static final String SQL_UPDATE = "UPDATE productos SET  nombre = ?, tipo=?, cantidad=?, precio=?, disponibilidad = ? WHERE codigo = ?";
     private static final String SQL_DELETE = "DELETE FROM productos WHERE codigo=?";
-    private static final String SQL_READ = "SLECT * FROM productos WHERE codigo = ?";
+    private static final String SQL_READ = "SELECT * FROM productos WHERE codigo = ?";
     private static final String SQL_READALL = "SELECT * FROM productos";
     
     Conexion con = new Conexion();
@@ -40,6 +40,7 @@ public class Filtro {
             ps.setDouble(4, g.getPrecio());
             ps.setString(5, g.getTipo());
             ps.setBoolean(6, true);
+            System.out.println(ps);
             if(ps.executeUpdate()>0){
                 return true;
             }
@@ -102,10 +103,12 @@ public class Filtro {
         try{
             ps =con.getCnx().prepareStatement(SQL_READ);
             ps.setString(1, key);
-            
+            System.out.println(SQL_READ);
             rs = ps.executeQuery();
             while(rs.next()){
                 f = new Producto (rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getInt(5),rs.getDouble(6),rs.getBoolean(7));
+                System.out.println("creando producto");
+                //System.out.println(f.getCodigo());
             }
             rs.close();
         }catch (SQLException ex){
