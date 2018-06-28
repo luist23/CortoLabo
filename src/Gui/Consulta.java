@@ -188,7 +188,7 @@ public final class Consulta extends JFrame{
         });
         actualizar.addActionListener((ActionEvent e) -> {
             Filtro fd = new Filtro();
-            Producto f = new Producto(nombre.getText(),codigo.getText(),tipo.getAccessibleContext().toString(),Integer.parseInt(cantidad.getText()),Double.parseDouble(precio.getText()));
+            Producto f = new Producto(nombre.getText(),codigo.getText(),"Fruta",Integer.parseInt(cantidad.getText()),Double.parseDouble(precio.getText()));
             
             if(no.isSelected()){
                 f.setDisponibilidad(false);
