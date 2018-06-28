@@ -19,6 +19,9 @@ public class Corto {
     public static void main(String[] args) {
         // TODO code application logic here
         Consulta gui= new Consulta();
+        gui.setEnabled(true);
+        gui.setVisible(true);
+        
         
     }
     
